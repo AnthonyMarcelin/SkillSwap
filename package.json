@@ -1,0 +1,18 @@
+{
+  "name": "skillswap-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/back",
+    "apps/front"
+  ],
+  "scripts": {
+    "docker:back": "cd apps/back && docker compose up -d --build",
+    "docker:back:down": "cd apps/back && docker compose down",
+    "docker:all": "cd apps/back && docker compose up -d --build",
+    "dev:front": "npm run dev --workspace=apps/front",
+    "dev": "npm run docker:back && npm run dev:front",
+    "stop:all": "cd apps/back && docker compose down",
+    "rm:back": "cd apps/back && docker compose rm -f",
+    "rm:back:all": "cd apps/back && docker compose down --volumes && docker compose rm -f"
+  }
+}

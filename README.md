@@ -1,6 +1,18 @@
 # SkillSwap
 
-SkillSwap monorepo
+## Lancer le projet
+
+1. Assurez-vous d’avoir Docker et Node.js installés.
+2. Installez les dépendances à la racine du monorepo :
+   ```sh
+   npm install
+   ```
+3. Lancez le projet (backend via Docker + frontend en mode dev) :
+   ```sh
+   npm run dev
+   ```
+
+Le backend (API + BDD) sera lancé dans des conteneurs Docker, et le frontend sera accessible sur http://localhost:5173.
 
 ## Scripts npm à la racine
 
@@ -18,8 +30,3 @@ SkillSwap monorepo
 - **npm run stop:all** : Arrête tous les services Docker du backend (API + BDD), sans supprimer les volumes.
 - **npm run rm:back** : Supprime les conteneurs Docker du backend, mais garde les volumes de données (les données de la BDD sont conservées).
 - **npm run rm:back:all** : Supprime les conteneurs Docker du backend ET les volumes (toutes les données de la BDD sont effacées).
-
----
-
-> **Remarque :**
-> Les scripts ne doivent pas être commentés dans le package.json. Utilisez ce README pour la documentation des commandes.

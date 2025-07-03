@@ -1,11 +1,16 @@
 import "dotenv/config";
 import { Sequelize } from "sequelize";
 
-if (!process.env.PG_URL) {
-  throw new Error("PG_URL variable environment is required !");
+const dbUrl =
+  process.env.DATABASE_URL || process.env.PG_URL_DOCKER || process.env.PG_URL;
+
+if (!dbUrl) {
+  throw new Error(
+    "No database connection URL found (DATABASE_URL, PG_URL_DOCKER or PG_URL)!",
+  );
 }
 
-const sequelize = new Sequelize(process.env.PG_URL, {
+const sequelize = new Sequelize(dbUrl, {
   define: {
     timestamps: true,
     createdAt: "created_at",
@@ -15,7 +20,7 @@ const sequelize = new Sequelize(process.env.PG_URL, {
 
 try {
   await sequelize.authenticate();
-  console.log("connection has been established succesfully.");
+  console.log("Database connection has been established successfully.");
 } catch (error) {
   console.log("Unable to connect to the database.", error);
 }

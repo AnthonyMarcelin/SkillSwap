@@ -1,0 +1,7 @@
+[build] builder = "NIXPACKS"
+
+[deploy] services = ["frontend", "backend"]
+
+[[services]] name = "frontend" start_command = "cd apps/front && npm install && npm run build && npm run preview" path = "./apps/front"
+
+[[services]] name = "backend" start_command = "cd apps/back && npm install && npm run dev" path = "./apps/back"

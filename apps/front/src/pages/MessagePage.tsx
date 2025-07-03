@@ -69,7 +69,7 @@ export default function MessagePage() {
 
     try {
       const messageData = {
-        sender_id: id,
+        sender_id: Number(id),
         receiver_id: selectedConversation,
         body: newMessage,
       };

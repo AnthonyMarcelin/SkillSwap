@@ -8,6 +8,9 @@ import type { IService, IServiceStatus } from "@/types/service";
 import { useServiceStatus } from "@/hooks/useServiceStatus";
 
 const statusLabels: Record<IServiceStatus | "completed", string> = {
+  "en attente": "En attente",
+  accepté: "Accepté",
+  terminé: "Terminé",
   pending: "En attente",
   accepted: "Accepté",
   done: "Terminé",
@@ -31,7 +34,7 @@ export function ServiceCard({
     id,
     giverName = "Inconnu",
     receiverName = "Inconnu",
-    giverId,
+    //giverId,
     receiverId,
     title = "Sans titre",
     date,
@@ -44,7 +47,7 @@ export function ServiceCard({
   );
 
   // On identifie le rôle de l'utilisateur connecté
-  const isGiver = currentUserId === giverId;
+  // const isGiver = currentUserId === giverId;
   const isReceiver = currentUserId === receiverId;
 
   // Attribution de style différent selon le statut

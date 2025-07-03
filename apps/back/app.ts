@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://skillswap-front-production.up.railway.app", // Remplace par l'URL exacte de ton front Railway si besoin
+  "https://skillswap.up.railway.app", // URL Railway
 ];
 
 app.use(

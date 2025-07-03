@@ -1,4 +1,10 @@
-export type IServiceStatus = "en attente" | "accepté" | "terminé";
+export type IServiceStatus =
+  | "en attente"
+  | "accepté"
+  | "terminé"
+  | "pending"
+  | "accepted"
+  | "done";
 
 export interface IService {
   id: number;

@@ -7,7 +7,6 @@ import { fr } from "date-fns/locale";
 import type { IService, IServiceStatus } from "@/types/service";
 import { useServiceStatus } from "@/hooks/useServiceStatus";
 
-
 const statusLabels: Record<IServiceStatus | "completed", string> = {
   pending: "En attente",
   accepted: "Accepté",
@@ -40,8 +39,8 @@ export function ServiceCard({
 
   // Hook custom pour gérer localement le statut du service
   const { status, loading, changeStatus } = useServiceStatus(
-    id,
-    service.status
+    id.toString(),
+    service.status,
   );
 
   // On identifie le rôle de l'utilisateur connecté
@@ -67,7 +66,7 @@ export function ServiceCard({
   const handleStatusChange = (newStatus: IServiceStatus) => {
     changeStatus(newStatus); // MAJ via API
     console.log(
-      `Tentative de mise à jour du service ID ${id} vers le statut : "${newStatus}"`
+      `Tentative de mise à jour du service ID ${id} vers le statut : "${newStatus}"`,
     );
     onStatusUpdate?.(newStatus); // Callback pour actualiser en parent si besoin
   };

@@ -140,7 +140,10 @@ export default function Header() {
               <>
                 {/* Menu pour utilisateurs connectés */}
                 <li>
-                  <Link to="/personalpage" onClick={() => setOpen(false)}>
+                  <Link
+                    to={`/personalpage/${authUser?.id}`}
+                    onClick={() => setOpen(false)}
+                  >
                     Mon profil
                   </Link>
                 </li>

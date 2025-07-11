@@ -40,7 +40,7 @@ export function CarouselPlugin({ className = "" }: CarouselPluginProps) {
         const users = await getRandomUsers();
         setUsers(users);
       } catch (error) {
-        setError("Error fetching users:", error);
+        setError("Error fetching users:" + error);
       } finally {
         setLoading(false);
       }

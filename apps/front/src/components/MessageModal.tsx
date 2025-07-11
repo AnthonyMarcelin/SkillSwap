@@ -65,6 +65,8 @@ export default function MessageModal({
         <section className="mb-4">
           <h3 className="text-xl font-semibold mb-2">Votre message ici :</h3>
 
+          {error && <div className="text-red-600 mb-2">{error.message}</div>}
+
           <div className="border-t pt-4">
             <div className="flex space-x-4">
               <input

@@ -15,10 +15,19 @@ export function useServiceStatus(
     // console.log(`🔄 Tentative de changement du statut du service ${serviceId} vers "${newStatus}"...`)
 
     try {
-      const response = await updateServiceStatus(serviceId, newStatus);
+      const statusMap: Record<IServiceStatus, "done" | "pending" | "accepted"> =
+        {
+          "en attente": "pending",
+          accepté: "accepted",
+          terminé: "done",
+          pending: "pending",
+          accepted: "accepted",
+          done: "done",
+        };
+
+      await updateServiceStatus(serviceId, statusMap[newStatus]);
       setStatus(newStatus);
       // console.log(`Statut mis à jour avec succès : nouveau statut : "${newStatus}"`)
-      // console.log("Réponse de l'API :", response)
     } catch (error) {
       console.error("Échec de la mise à jour du statut :", error);
     } finally {

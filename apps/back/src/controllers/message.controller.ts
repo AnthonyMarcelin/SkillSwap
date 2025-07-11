@@ -110,7 +110,7 @@ const messageController: MessageController = {
       }
 
       // Fetch the latest messages for the user
-      const [results] = await Message.sequelize!.query(
+      const results = await Message.sequelize!.query(
         `
                 SELECT DISTINCT ON (
                 LEAST(sender_id, receiver_id),

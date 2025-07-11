@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "@/components/ui/Card";
 import Header from "@/components/Header";
@@ -30,24 +30,28 @@ export default function MessagePage() {
 
   const { users } = useAllUsers();
 
+  const refreshConversations = useCallback(async () => {
+    try {
+      const response = await getLatestMessagesForUser(id!);
+      if (Array.isArray(response)) {
+        setConversations(response);
+      } else {
+        // Si response est une conversation unique
+        setConversations([response as IConversation]);
+      }
+    } catch (error) {
+      setError(error as Error);
+    }
+  }, [id]);
+
   useEffect(() => {
     const fetchConversations = async () => {
-      try {
-        const response = await getLatestMessagesForUser(id!);
-        if (Array.isArray(response)) {
-          setConversations(response);
-        } else {
-          // Si response est une conversation unique
-          setConversations([response as IConversation]);
-        }
-      } catch (error) {
-        setError(error as Error);
-      } finally {
-        setLoading(false);
-      }
+      setLoading(true);
+      await refreshConversations();
+      setLoading(false);
     };
     fetchConversations();
-  }, [id]);
+  }, [refreshConversations]);
 
   const handleConversationClick = async (
     userId: string,
@@ -65,11 +69,11 @@ export default function MessagePage() {
   };
 
   const handleSendMessage = async () => {
-    if (!newMessage.trim() || !selectedConversation) return;
+    if (!newMessage.trim() || !selectedConversation || !id) return;
 
     try {
       const messageData = {
-        sender_id: id,
+        sender_id: Number(id),
         receiver_id: selectedConversation,
         body: newMessage,
       };
@@ -82,6 +86,9 @@ export default function MessagePage() {
       console.log("Received new message:", newMsg); // Log de la réponse
       setMessages((prev) => [...prev, newMsg]);
       setNewMessage("");
+
+      // Mettre à jour la liste des conversations après l'envoi d'un message
+      await refreshConversations();
     } catch (error) {
       console.error("Error sending message:", error); // Log de l'erreur
       setError(error as Error);
@@ -127,7 +134,7 @@ export default function MessagePage() {
                           setActiveUser(user);
                         }}
                         className={`p-4 rounded-lg cursor-pointer transition-colors bg-primary ${
-                          selectedConversation === conversation.id
+                          selectedConversation === user.id
                             ? "opacity-80"
                             : "hover:opacity-90"
                         }`}
@@ -221,8 +228,8 @@ export default function MessagePage() {
                                 {sender ? sender.firstname : "Utilisateur"}
                               </span>
                             </div>
-                            <div className="max-w-[70%] p-3 rounded-lg bg-gray-100">
-                              <p>{message.body}</p>
+                            <div className="w-full p-3 rounded-lg mb-2 bg-gray-100 text-black">
+                              <p className="break-words">{message.body}</p>
                               <span className="text-xs text-gray-500 mt-1 block">
                                 {new Date(message.sending_date).toLocaleString(
                                   "fr-FR",

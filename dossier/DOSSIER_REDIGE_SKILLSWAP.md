@@ -960,15 +960,19 @@ L'architecture frontend suit le pattern **Container/Presenter** avec une organis
 
 ```
 src/
+├── api
+├── assets
 ├── components/          # Composants réutilisables
 │   ├── ui/             # Composants UI de base
 │   ├── forms/          # Formulaires spécialisés
 │   └── layout/         # Mise en page
-├── pages/              # Pages de l'application
 ├── hooks/              # Hooks personnalisés
+├── lib/                # Utilitaires
+├── pages/              # Pages de l'application
 ├── services/           # Services API
+├── tests/              # Tests unitaires et d'intégration
 ├── types/              # Types TypeScript
-└── lib/                # Utilitaires
+└── utils/              # Fonctions utilitaires
 ```
 
 **Composants principaux :**

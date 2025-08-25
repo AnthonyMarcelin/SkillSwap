@@ -25,12 +25,10 @@ export default function Homepage() {
         s.name.toLowerCase().includes(skill.toLowerCase()),
       );
 
-      // Si un code postal est fourni, on filtre aussi dessus
       if (zipcode.trim()) {
         return hasSkill && user.zipcode === zipcode;
       }
 
-      // Sinon, on ne filtre que par compétence
       return hasSkill;
     });
 

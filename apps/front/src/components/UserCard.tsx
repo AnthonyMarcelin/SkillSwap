@@ -39,7 +39,7 @@ export function UserCard() {
 
         setUser(data);
 
-        // 🔐 essaie de récupérer l'utilisateur connecté si possible
+        //  essaie de récupérer l'utilisateur connecté si possible
         try {
           const current = await getCurrentUser();
           setLoggedInUser(current);
@@ -59,7 +59,7 @@ export function UserCard() {
 
   const handleAskService = () => {
     if (!loggedInUser) {
-      navigate("/register"); // 🔄 redirection si pas connecté
+      navigate("/register"); //  redirection si pas connecté
     } else {
       setShowModal(true);
     }
@@ -144,7 +144,7 @@ export function UserCard() {
         </CardContent>
       </Card>
 
-      {/* 🌟 Modale de message */}
+      {/*  Modale de message */}
       {showMessageModal && authUser?.id && (
         <MessageModal
           onClose={() => setShowMessageModal(false)}
@@ -153,7 +153,7 @@ export function UserCard() {
         />
       )}
 
-      {/* 🌟 Modale de service */}
+      {/*  Modale de service */}
       {showModal && (
         <ServiceModal
           isOpen={showModal}

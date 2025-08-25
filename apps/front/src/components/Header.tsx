@@ -16,8 +16,7 @@ export default function Header() {
     const fetchUser = async () => {
       try {
         const user = await getCurrentUser();
-        // console.log("Données complètes de l'utilisateur:", user);
-        // console.log("Prénom de l'utilisateur:", user.firstname);
+
         setAuthUser(user);
       } catch (error) {
         console.error("Erreur lors du chargement de l'utilisateur : ", error);
@@ -36,7 +35,6 @@ export default function Header() {
     }
   };
 
-  // console.log("Etat d'authentification : ", isAuthenticated);
 
   return (
     <header className="header-container relative flex flex-col w-full">

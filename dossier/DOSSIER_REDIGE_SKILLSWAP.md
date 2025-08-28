@@ -3554,7 +3554,7 @@ Si vous souhaitez un résumé complémentaire ici, je peux en ajouter (ex : 3 li
 
 #### Stratégie d'authentification JWT
 
-**Implémentation sécurisée des JSON Web Tokens**
+**Implémentation sécurisée des JSON Web Tokens**V
 
 SkillSwap utilise un système d'authentification basé sur JWT (JSON Web Tokens) avec des mesures de sécurité renforcées pour protéger les sessions utilisateur et l'accès aux ressources sensibles.
 

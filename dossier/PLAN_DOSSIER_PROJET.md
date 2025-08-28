@@ -404,7 +404,7 @@
 
 - Mise à jour des dépendances
 - Patches de sécurité appliqués
-- Bonnes pratiques implémentées
+- Bonnes pratiques implémentéesV
 
 ### 12.4 Impact sur le projet
 

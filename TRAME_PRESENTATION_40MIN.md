@@ -1,4 +1,4 @@
-# 🎯 **TRAME DE PRÉSENTATION - 40 MINUTES**
+# 🎯 **TRAME DE PRÉSENTATION - 43 MINUTES**
 
 ### **Projet SkillSwap - Plateforme d'échange de compétences**
 
@@ -49,9 +49,39 @@ _"Après 20 ans comme chauffeur-livreur, j'ai choisi de me reconvertir dans le d
 
 ---
 
+### **🎯 2.5 MVP & FONCTIONNALITÉS PRIORITAIRES** _(3 minutes)_
+
+**⏰ Timing : 12-15 min**
+
+**💡 Définition du MVP :**
+
+- Minimum Viable Product livrable en 3 semaines
+- Focus sur l'essentiel : échange de compétences gratuit
+- Approche produit avec priorisation des fonctionnalités
+
+**💡 Fonctionnalités du MVP validées :**
+
+- ✅ **Landing page** avec présentation des valeurs de SkillSwap
+- ✅ **Système d'authentification** sécurisé (inscription/connexion)
+- ✅ **Profils utilisateurs** avec gestion des compétences
+- ✅ **Recherche intelligente** par compétences et géolocalisation
+- ✅ **Messagerie privée** intégrée pour les échanges
+- ✅ **Gestion des services** (proposition et réservation)
+
+**💡 Critères de réussite atteints :**
+
+- Application web responsive fonctionnelle
+- Toutes les user stories prioritaires validées
+- Respect strict des contraintes de sécurité
+- Déploiement réussi en production
+
+**🎯 Insister sur :** La capacité à livrer un produit fonctionnel dans les délais avec une approche professionnelle de priorisation.
+
+---
+
 ### **🏗️ 3. ARCHITECTURE & CHOIX TECHNIQUES** _(8 minutes)_
 
-**⏰ Timing : 12-20 min**
+**⏰ Timing : 15-23 min**
 
 **💡 Stack technique justifiée :**
 
@@ -79,7 +109,7 @@ _"Après 20 ans comme chauffeur-livreur, j'ai choisi de me reconvertir dans le d
 
 ### **🎨 4. CONCEPTION & UX/UI** _(5 minutes)_
 
-**⏰ Timing : 20-25 min**
+**⏰ Timing : 23-28 min**
 
 **💡 Processus de conception :**
 
@@ -103,7 +133,7 @@ _"Après 20 ans comme chauffeur-livreur, j'ai choisi de me reconvertir dans le d
 
 ### **💻 5. MES RÉALISATIONS TECHNIQUES** _(10 minutes)_
 
-**⏰ Timing : 25-35 min**
+**⏰ Timing : 28-38 min**
 
 **💡 Conception base de données (ma contribution principale) :**
 
@@ -132,7 +162,7 @@ _"Après 20 ans comme chauffeur-livreur, j'ai choisi de me reconvertir dans le d
 
 ### **🔒 6. SÉCURITÉ & BONNES PRATIQUES** _(3 minutes)_
 
-**⏰ Timing : 35-38 min**
+**⏰ Timing : 38-41 min**
 
 **💡 Authentification JWT :**
 
@@ -159,7 +189,7 @@ _"Après 20 ans comme chauffeur-livreur, j'ai choisi de me reconvertir dans le d
 
 ### **🎯 7. CONCLUSION & PERSPECTIVES** _(2 minutes)_
 
-**⏰ Timing : 38-40 min**
+**⏰ Timing : 41-43 min**
 
 **💡 Bilan du projet :**
 
@@ -188,24 +218,25 @@ _"Ce projet marque le début de ma nouvelle carrière de développeur. Il m'a pe
 
 ## **🎬 SLIDES CANVA - STRUCTURE RECOMMANDÉE**
 
-### **Slides essentielles (15-20 slides max) :**
+### **Slides essentielles (16-21 slides max) :**
 
 1. **Titre + Présentation**
 2. **Problématique & Solution SkillSwap**
 3. **Équipe & Organisation**
 4. **Planning des 3 sprints**
-5. **Architecture technique globale**
-6. **Stack technique + justifications**
-7. **Maquettes mobile & desktop**
-8. **Modèle de base de données (MCD)**
-9. **Structure du backend (dossiers + API)**
-10. **Captures d'écran : Page d'accueil**
-11. **Captures d'écran : Système de messagerie**
-12. **Extraits de code : Modèles Sequelize**
-13. **Extraits de code : Controllers**
-14. **Sécurité : JWT + Protection**
-15. **Démo live (si possible)**
-16. **Bilan & Perspectives**
+5. **🆕 MVP & Fonctionnalités prioritaires**
+6. **Architecture technique globale**
+7. **Stack technique + justifications**
+8. **Maquettes mobile & desktop**
+9. **Modèle de base de données (MCD)**
+10. **Structure du backend (dossiers + API)**
+11. **Captures d'écran : Page d'accueil**
+12. **Captures d'écran : Système de messagerie**
+13. **Extraits de code : Modèles Sequelize**
+14. **Extraits de code : Controllers**
+15. **Sécurité : JWT + Protection**
+16. **Démo live (si possible)**
+17. **Bilan & Perspectives**
 
 ---
 

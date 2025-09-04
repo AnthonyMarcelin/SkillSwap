@@ -262,6 +262,47 @@ src/
 
 ---
 
+## 📸 SLIDE 11BIS : STRUCTURE DU FRONTEND (DOSSIERS + LOGIQUE)
+
+### **Contenu :**
+
+- **Arborescence du projet React :**
+
+```
+front/src/
+├── components/      # Composants réutilisables
+├── pages/           # Pages principales (routing)
+├── hooks/           # Custom hooks React
+├── services/        # Appels API (Axios)
+├── types/           # Typage TypeScript
+├── assets/          # Images, icônes
+├── lib/             # Fonctions utilitaires
+├── api/             # Configuration endpoints
+├── tests/           # Tests unitaires
+├── index.css        # Styles globaux
+└── App.tsx          # Point d'entrée principal
+```
+
+- **Organisation logique :**
+
+  - Découpage par composants pour la réutilisabilité
+  - Routing géré par React Router
+  - Gestion d’état avec hooks (useState, useEffect)
+  - Appels API centralisés dans services/
+  - Typage strict pour fiabilité
+
+- **Bonnes pratiques appliquées :**
+
+  - Mobile-first et responsive
+  - Séparation claire des responsabilités
+  - Tests unitaires (si présents)
+
+- **Lien avec le backend :**
+  - Communication via Axios
+  - Sécurité des échanges (JWT, cookies)
+
+---
+
 ## **📸 SLIDE 11 : CAPTURES D'ÉCRAN - PAGE D'ACCUEIL**
 
 ### **Contenu :**

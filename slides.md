@@ -422,7 +422,8 @@ const verifyToken = (req, res, next) => {
 - **Protection des données :**
 
   - Hashage Argon2 (passwords)
-  - Validation Zod (côté client/serveur)
+  - Validation Zod (côté serveur)
+  - Validation manuelle dans les formulaires React (frontend) : vérification des champs, force du mot de passe, etc.
   - Sanitisation entrées utilisateur
   - Middleware anti-profanité
 
@@ -466,7 +467,7 @@ const verifyToken = (req, res, next) => {
 
 - **Compétences acquises :**
 
-  - Stack JavaScript full-stack
+  - Maîtrise du développement web moderne avec JavaScript, TypeScript, React, Node.js et PostgreSQL
   - Méthodologie Agile/SCRUM
   - Conception BDD relationnelle
   - Sécurisation application web

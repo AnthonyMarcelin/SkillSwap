@@ -97,13 +97,15 @@ _"Après 20 ans comme chauffeur-livreur, j'ai choisi de me reconvertir dans le d
 - Sequelize ORM (migrations, requêtes simplifiées)
 - PostgreSQL (base relationnelle adaptée aux relations complexes)
 
-**💡 Architecture MVC respectée :**
+**💡 Architecture API REST + SPA :**
 
-- Séparation claire des responsabilités
+- **Backend** : API REST avec pattern en couches (Controllers, Models, Routes)
+- **Frontend** : SPA React qui consomme l'API (pas de vues côté serveur)
+- **Séparation frontend/backend** : Communication via requêtes HTTP/JSON
 - Middlewares pour sécurité et validation
 - Structure modulaire et maintenable
 
-**🎯 Montrer le diagramme d'architecture** et expliquer pourquoi ces choix étaient pertinents pour un MVP en 3 semaines.
+**🎯 Montrer le diagramme d'architecture** et expliquer pourquoi cette séparation client/serveur était pertinente pour un MVP en 3 semaines.
 
 ---
 
@@ -292,7 +294,7 @@ _"Ce projet marque le début de ma nouvelle carrière de développeur. Il m'a pe
 ### 🎯 **Points à absolument mettre en avant :**
 
 1. **Votre reconversion** (pages 22-23) - Histoire personnelle touchante et motivante
-2. **Architecture MVC complète** que vous avez mise en place
+2. **Architecture API REST + SPA** que vous avez mise en place
 3. **Sécurité "by design"** - Vraiment professionnel pour un junior
 4. **Gestion d'équipe SCRUM** - Montre vos soft skills
 5. **Déploiement Railway** - Initiative personnelle post-formation

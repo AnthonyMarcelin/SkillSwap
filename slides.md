@@ -132,23 +132,18 @@
 
 ### **Contenu :**
 
-- **Architecture 3-tiers :**
+- **Architecture 3-tiers moderne :**
 
-  - **Frontend :** React SPA
-  - **Backend :** API REST Node.js
+  - **Frontend :** SPA React (Single Page Application)
+  - **Backend :** API REST Node.js (sans vues serveur)
   - **Database :** PostgreSQL
 
-- **Architecture MVC respectée :**
+- **Communication découplée :**
 
-  - **Models :** Sequelize ORM
-  - **Views :** Composants React
-  - **Controllers :** Express.js
-
-- **Séparation des responsabilités :**
-
-  - Frontend/Backend découplés
-  - API REST pour communication
-  - Middlewares pour sécurité
+  - Frontend/Backend totalement séparés
+  - Échanges via requêtes HTTP/JSON
+  - Authentification JWT via cookies
+  - Middlewares pour sécurité et validation
 
 - **Schéma visuel de l'architecture**
 

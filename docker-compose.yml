@@ -34,7 +34,7 @@ services:
       context: ./apps/front
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - "4001:80"
     restart: always
 
 volumes:

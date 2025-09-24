@@ -20,12 +20,24 @@ services:
     depends_on:
       - db
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.skillswap-back.rule=Host(`${BACK_HOST:-api.skillswap.local}`)"
+      - "traefik.http.routers.skillswap-back.entrypoints=web,websecure"
+      - "traefik.http.routers.skillswap-back.tls=true"
+      - "traefik.http.services.skillswap-back.loadbalancer.server.port=3000"
 
   front:
     build:
       context: ./apps/front
       dockerfile: Dockerfile
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.skillswap-front.rule=Host(`${FRONT_HOST:-skillswap.local}`)"
+      - "traefik.http.routers.skillswap-front.entrypoints=web,websecure"
+      - "traefik.http.routers.skillswap-front.tls=true"
+      - "traefik.http.services.skillswap-front.loadbalancer.server.port=80"
 
   proxy:
     image: nginx:stable-alpine
@@ -37,6 +49,10 @@ services:
     depends_on:
       - front
       - back
+
+networks:
+  traefik:
+    external: true
 
 volumes:
   db_data:

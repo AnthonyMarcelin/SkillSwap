@@ -25,6 +25,12 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "3000:3000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.skillswap-back.rule=Host(`${BACK_HOST:-api.skillswap.local}`)"
+      - "traefik.http.routers.skillswap-back.entrypoints=web,websecure"
+      - "traefik.http.routers.skillswap-back.tls=true"
+      - "traefik.http.services.skillswap-back.loadbalancer.server.port=3000"
     depends_on:
       - db
     command: sh -c "node src/wait-for-db.js && npm run db:create && npm run db:alter:service-status && npm run db:seed && npm run dev"
@@ -35,7 +41,17 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4001:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.skillswap-front.rule=Host(`${FRONT_HOST:-skillswap.local}`)"
+      - "traefik.http.routers.skillswap-front.entrypoints=web,websecure"
+      - "traefik.http.routers.skillswap-front.tls=true"
+      - "traefik.http.services.skillswap-front.loadbalancer.server.port=80"
     restart: always
 
 volumes:
   db_data:
+
+networks:
+  traefik:
+    external: true

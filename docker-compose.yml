@@ -1,3 +1,4 @@
+version: '3.8'
 services:
   db:
     image: postgres:16-alpine
@@ -7,13 +8,13 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "5432"
+      - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
 
   back:
     build:
-      context: .
+      context: ./apps/back
       dockerfile: Dockerfile
     restart: always
     environment:
@@ -26,10 +27,15 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB} || exit 1"]
-      interval: 5s
-      retries: 20
     command: sh -c "node src/wait-for-db.js && npm run db:create && npm run db:alter:service-status && npm run db:seed && npm run dev"
+
+  front:
+    build:
+      context: ./apps/front
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    restart: always
+
 volumes:
   db_data:

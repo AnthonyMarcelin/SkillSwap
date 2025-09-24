@@ -53,6 +53,7 @@ docker compose up --build -d
 ```
 
 Cela construira et démarrera :
+
 - `db` — Postgres
 - `back` — backend Node/TS
 - `front` — frontend servi par nginx (port 8080 exposé)
@@ -149,6 +150,7 @@ Puis exécute `chmod +x scripts/import_dump.sh` et lance `./scripts/import_dump.
 ---
 
 Si tu veux, je peux :
+
 - générer `scripts/import_dump.sh` dans le repo et le committer, ou
 - transformer le Dockerfile du backend en multi-stage production ready (build TS puis run) et fournir un compose de production + config nginx.
 

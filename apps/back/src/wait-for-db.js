@@ -1,11 +1,11 @@
-const { Client } = require('pg');
+const { Client } = require("pg");
 const connectionString = process.env.PG_URL || process.env.PG_URL_DOCKER;
 
 const retryInterval = 2000;
 
 async function wait() {
   if (!connectionString) {
-    console.error('No PG_URL provided');
+    console.error("No PG_URL provided");
     process.exit(1);
   }
 
@@ -14,10 +14,10 @@ async function wait() {
     try {
       await client.connect();
       await client.end();
-      console.log('Postgres is available');
+      console.log("Postgres is available");
       process.exit(0);
     } catch (err) {
-      console.log('Waiting for Postgres...');
+      console.log("Waiting for Postgres...");
       await new Promise((r) => setTimeout(r, retryInterval));
     }
   }

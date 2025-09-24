@@ -27,7 +27,11 @@ services:
     depends_on:
       - db
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB} || exit 1"]
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB} || exit 1",
+        ]
       interval: 5s
       retries: 20
     command: sh -c "node src/wait-for-db.js && npm run db:create && npm run db:alter:service-status && npm run db:seed && npm run dev"
